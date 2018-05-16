@@ -1,4 +1,3 @@
-###########################
 #Config
 getwd()
 configs <- readLines('config')
