@@ -44,6 +44,7 @@ else:
     result_tag = envdic['result_tag']
     width1 = float(envdic['width1'])
     width2 = float(envdic['width2'])
+    ssmethod = envdic['ssmethod']
     
 del envdic
 
@@ -105,6 +106,14 @@ data_dict_dn_fwd = {}
 data_dict_dn_rev = {}
 
 #%% change artifical reads to true reads
+if ssmethod == 'directional_ligation':
+    pe = 'first'
+elif ssmethod == 'dUTP':
+    pe = 'second'
+else:
+    print "Please specify the strand specific method, directional_ligation or dUTP"
+    exit(1)
+
 for index in range(0, len(sample_names)):
     
     profile_up_fwd = np.zeros(2*width1, dtype = 'd')
@@ -123,7 +132,7 @@ for index in range(0, len(sample_names)):
     bamfile = HTSeq.BAM_Reader(filename)
     coverage = HTSeq.GenomicArray('auto', stranded = True, typecode = 'd')
     for almnt in bamfile:
-        if almnt.pe_which == 'first':
+        if almnt.pe_which == pe:
             newiv = almnt.iv
             try:
                 coverage[newiv] += factor
