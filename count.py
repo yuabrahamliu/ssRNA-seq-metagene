@@ -1,4 +1,3 @@
-#!/HPCTMP_NOBKUP/yl1217/local/anaconda2/bin/python
 # -*- coding: utf-8 -*-
 """
 Created on Tue Apr 24 16:11:45 2018
