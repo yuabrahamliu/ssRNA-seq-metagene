@@ -1,0 +1,14 @@
+python = /HPCTMP_NOBKUP/yl1217/local/anaconda2/bin/python
+Rscript = /home/yl1217/packages/R/bin/Rscript
+project = ssRNA_pipeline
+countreads = Yes
+samtools = /HPCTMP_NOBKUP/yl1217/local/anaconda2/bin/samtools
+pos_f = /HPCTMP_NOBKUP/yl1217/liming/mnasemeta/posfile/lnc.pos.txt
+result_tag = bd12_19_lnc
+width1 = 5000
+width2 = 10000
+ssmethod = directional_ligation
+drawfig = Yes
+fig_tag = bd12_19
+halfwindow = 2000,1000,500
+sampletags = +dox_4d_rep1,-dox_4d_rep1,+dox_4d_DRB_5min_rep1,-dox_4d_DRB_5min_rep1,+dox_4d_DRB_15min_rep1,-dox_4d_DRB_15min_rep1,+dox_4d_DRB_30min_rep1,-dox_4d_DRB_30min_rep1
