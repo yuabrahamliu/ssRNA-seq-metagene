@@ -7,7 +7,6 @@ This program is used to do the metagene analysis on the ssRNA-seq and Pro-seq da
 If you want to start the analysis from bam files, you need to first put the files in the folder "data" in the package, then configure the parameters in the config file, and finally, simply type `make`, then the program will run automatically.
 
 ## Parameters 
-
 * countreads - If your analysis is from bam files, give "Yes" to this parameters, otherwise, "No".
 * pos_f - It is the path where the genelist containing the genes to be analyzed is.
 * result_tag - It is a part of the name of count result file. The format is "data number1_data number2_analyzed gene type", for example, "bd12_19_lnc".
