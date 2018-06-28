@@ -1,3 +1,4 @@
+#!/HPCTMP_NOBKUP/yl1217/local/anaconda2/bin/python
 # -*- coding: utf-8 -*-
 """
 Created on Tue Apr 24 16:11:45 2018
@@ -115,11 +116,11 @@ else:
 
 for index in range(0, len(sample_names)):
     
-    profile_up_fwd = np.zeros(2*width1, dtype = 'd')
-    profile_dn_fwd = np.zeros(2*width2, dtype = 'd')
+    profile_up_fwd = np.zeros(2*int(width1), dtype = 'd')
+    profile_dn_fwd = np.zeros(2*int(width2), dtype = 'd')
     
-    profile_up_rev = np.zeros(2*width1, dtype = 'd')
-    profile_dn_rev = np.zeros(2*width2, dtype = 'd')
+    profile_up_rev = np.zeros(2*int(width1), dtype = 'd')
+    profile_dn_rev = np.zeros(2*int(width2), dtype = 'd')
     
     sampleid = sample_names[index].strip().split('.')[0]
     fwdfilename = sampleid + '.FWD'
@@ -217,22 +218,22 @@ for index in range(0, len(sample_names)):
 ###fwd file
         try:
             wincvg_fwd = np.fromiter(coverage[window], dtype = 'd', \
-                                     count = 2*width1)
+                                     count = 2*int(width1))
         except IndexError:
             try:
                 wincvg_fwd = np.fromiter(coverage[except_window], dtype = 'd', \
-                                         count = 2*width1)
+                                         count = 2*int(width1))
             except ValueError:
                 tssnum = tssnum - 1
                 pass
 ###rev file            
         try:
             wincvg_rev = np.fromiter(coverage[window_rev], dtype = 'd', \
-                                     count = 2*width1)
+                                     count = 2*int(width1))
         except IndexError:
             try:
                 wincvg_rev = np.fromiter(coverage[except_window_rev], dtype = 'd', \
-                                         count = 2*width1)
+                                         count = 2*int(width1))
             except ValueError:
                 pass
             
@@ -240,24 +241,24 @@ for index in range(0, len(sample_names)):
 ###fwd file
         try:
             wincvgq_fwd = np.fromiter(coverage[windowq], dtype = 'd', \
-                                      count = 2*width2)
+                                      count = 2*int(width2))
         except IndexError:
             try:
                 wincvgq_fwd = np.fromiter(coverage[except_windowq], \
                                           dtype = 'd', \
-                                          count = 2*width2)
+                                          count = 2*int(width2))
             except ValueError:
                 ttsnum = ttsnum - 1
                 pass
 ###rev file
         try:
             wincvgq_rev = np.fromiter(coverage[windowq_rev], dtype = 'd', \
-                                      count = 2*width2)
+                                      count = 2*int(width2))
         except IndexError:
             try:
                 wincvgq_rev = np.fromiter(coverage[except_windowq_rev], \
                                           dtype = 'd', \
-                                          count = 2*width2)
+                                          count = 2*int(width2))
             except ValueError:
                 pass
 
