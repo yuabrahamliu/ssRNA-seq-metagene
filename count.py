@@ -36,7 +36,8 @@ for line in config:
     envdic[name] = env
     
 if not envdic['countreads'].upper() == 'YES':
-    exit
+    import sys
+    sys.exit()
 else:
     project = envdic['project']
     samtools = envdic['samtools']
@@ -111,8 +112,8 @@ if ssmethod == 'directional_ligation':
 elif ssmethod == 'dUTP':
     pe = 'second'
 else:
-    print "Please specify the strand specific method, directional_ligation or dUTP"
-    exit(1)
+    import sys
+    sys.exit("Please specify the strand specific method, directional_ligation or dUTP")
 
 for index in range(0, len(sample_names)):
     
